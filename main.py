@@ -37,7 +37,7 @@ def listar_clientes(db: Session = Depends(get_db)):
     return clientes
 
 #Buscar cliente por ID
-@app.get("/clientes/{cliente_id")
+@app.get("/clientes/{cliente_id}")
 def buscar_cliente(cliente_id: int, db: Session = Depends(get_db)):
     cliente = db.query(models.Cliente).filter(models.Cliente.id == cliente_id).first()
     if cliente:
